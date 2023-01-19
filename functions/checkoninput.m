@@ -1,4 +1,4 @@
-function checkoninput(dim,spaceboundary,xe,weight)
+function checkoninput(dim,spaceboundary,xe,weight,var)
 % checkoninput(dim,spaceboundary,xe,weight)
 % dim: dimension of the system
 % spaceboundary: boundaries of the phase space
@@ -41,6 +41,14 @@ end
 % check on correct length of weight
 if length(weight)~=dim
     error('weight must include as many elements as the value of "dimension"');
+end
+
+% check on correct values of variables to be plotted
+if var(1)>dim
+    error('"var1" should be equal or less than "dimension"');
+end
+if var(2)>dim
+    error('"var2" should be equal or less than "dimension"');
 end
 
 % check that spaceboundary is real

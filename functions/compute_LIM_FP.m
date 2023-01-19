@@ -198,7 +198,7 @@ total_points_est=round(tfinal/Ts*number_of_steps/4); % maximal total number of p
 x0=zeros(number_of_steps,dim); % vector containing all initial conditions utilized
 
 % this is for checking that dimension, spaceboundary and xe are inserted "legally"
-checkoninput(dim,spaceboundary(1,:),xe,weight)
+checkoninput(dim,spaceboundary(1,:),xe,weight,[var1 var2])
 
 if type_x0==2
     count_bis=0; % inizialized counter for bisection method for x0
@@ -338,9 +338,6 @@ for i1=1:number_of_steps % cycle over the pre-defined number of steps
                 end
             elseif type_x0==3
                 R(i1+1)=min(R(i1),findradius(xt,xe,weight)); % calculate new radius of convergence, comparing the old one with the one for the new points
-                if R(i1+1)>R(i1) % check if the new radius of convergence is not larger than the previously estimated one
-                    R(i1+1)=R(i1);
-                end
             end
         case 3 % diverging out of the phase space
             vdout(ind_doutp+1:ind_doutp+length(t)-1,:)=xt(1:end-1,:); % save points in vdout (vector of diverging points out of the phase space)
@@ -370,9 +367,6 @@ for i1=1:number_of_steps % cycle over the pre-defined number of steps
                 end
             elseif type_x0==3
                 R(i1+1)=min(R(i1),findradius(xt,xe,weight)); % calculate new radius of convergence, comparing the old one with the one for the new points
-                if R(i1+1)>R(i1) % check if the new radius of convergence is not larger than the previously estimated one
-                    R(i1+1)=R(i1);
-                end
             end
         case 4 % converging to a new unknown solution
             vd(ind_dp+1:ind_dp+length(t),:)=xt; % save points in vd (vector of diverging points)
@@ -380,7 +374,7 @@ for i1=1:number_of_steps % cycle over the pre-defined number of steps
                 figure(num_fig);plot(vd(ind_dp+1:ind_dp+length(t),var1),vd(ind_dp+1:ind_dp+length(t),var2),'r.');hold on;drawnow % add the time series in the phase space (in 2D, by default x1 and x2)
             end
             ind_dp=ind_dp+length(t);  % update index of diverging points
-            cell_d(ind_dc+1:ind_dc+length(cell_f)-1,1)=cell_f(1:end-1); % add cells to the list of diverging cells
+            cell_d(ind_dc+1:ind_dc+length(cell_f),1)=cell_f(1:end); % add cells to the list of diverging cells
             ind_dc=ind_dc+length(cell_f)-1; % update index of diverging cells
             if type_x0==1
                 R(i1+1)=min(R(i1),findradius(xt,xe,weight)); % calculate new radius of convergence, comparing the old one with the one for the new points
@@ -402,9 +396,6 @@ for i1=1:number_of_steps % cycle over the pre-defined number of steps
                 end
             elseif type_x0==3
                 R(i1+1)=min(R(i1),findradius(xt,xe,weight)); % calculate new radius of convergence, comparing the old one with the one for the new points
-                if R(i1+1)>R(i1) % check if the new radius of convergence is not larger than the previously estimated one
-                    R(i1+1)=R(i1);
-                end
             end
             counter_new_sol=counter_new_sol+1; % update counter of new solution
             other_solutions_c(counter_new_sol,:)={new_solution_c}; % add cells of the solution to the collector

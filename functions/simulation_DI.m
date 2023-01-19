@@ -49,7 +49,7 @@ cell_f(count)=find_index(temp_f,dim,discr);
 
 while converged<0.5 % stop if converged=1
     if count>tfinal/Ts % leave the loop if the final time is reached
-        t=[Ts:Ts:Ts*count]'; % create a time vector for the time series
+        t=[0:Ts:Ts*(count-1)]'; % create a time vector for the time series
         return % terminate the function (not only the loop) [THIS MIGHT CUASE PROBLEM, IT NEEDS TO BE TESTED BETTER]
     end
     count=count+1; % update counter for each step
@@ -111,7 +111,7 @@ while converged<0.5 % stop if converged=1
                             end
                             if count_rep>rep_periodic
                                 if check_min_periodic==1
-                                    temp_dist=maximal_distances(xt(count,:),xt(temp_selfconv(end-1):end-1,:),weight);
+                                    temp_dist=maximal_distances(xt(count,:),xt(temp_selfconv(end)+1:count-1,:),weight);
                                     if temp_dist>min_periodic_radius
                                         converged=1;
                                         tipo=4;
@@ -144,4 +144,4 @@ while converged<0.5 % stop if converged=1
 end
 xt=xt(1:count,:); % store the last point
 cell_f=cell_f(1:count); % store the last cell
-t=[Ts:Ts:Ts*count]'; % create a time vector for the time series
+t=[0:Ts:Ts*(count-1)]'; % create a time vector for the time series
