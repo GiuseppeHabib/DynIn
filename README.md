@@ -1,5 +1,5 @@
 # DynIn
-Code for estimating the local integrity measure (LIM) of dynamical systems.
+Matlab Toolbox for estimating the local integrity measure (LIM) of dynamical systems.
 
 DynIn is a Matlab toolbox that enables computation of the LIM of a dynamical system's steady-state solution (equilibrium or periodic solution). 
 Dynamical integrity measures are quantitative measures of the robustness of a stable steady-state against external perturbation. They are usually obtained by computing the basins of attraction of the system; however, this is a very lengthy procedure.
