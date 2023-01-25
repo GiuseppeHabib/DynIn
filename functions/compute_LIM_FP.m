@@ -375,7 +375,7 @@ for i1=1:number_of_steps % cycle over the pre-defined number of steps
             end
             ind_dp=ind_dp+length(t);  % update index of diverging points
             cell_d(ind_dc+1:ind_dc+length(cell_f),1)=cell_f(1:end); % add cells to the list of diverging cells
-            ind_dc=ind_dc+length(cell_f)-1; % update index of diverging cells
+            ind_dc=ind_dc+length(cell_f); % update index of diverging cells
             if type_x0==1
                 R(i1+1)=min(R(i1),findradius(xt,xe,weight)); % calculate new radius of convergence, comparing the old one with the one for the new points
                 % next two lines find and eliminate points from the list of
