@@ -8,8 +8,7 @@ This algorithm can rapidly compute the LIM of a solution without requiring compu
 
 Various examples are provided for utilizing the code.
 
-Please read the tutorial file for an extended explanation of what the code can be used for, how to install it, its limitations, and so on.  
-[Tutorial_v1.0.1.pdf](https://github.com/GiuseppeHabib/DynIn/files/10426931/Tutorial_v1.0.1.pdf)
+Please read the tutorial file for an extended explanation of what the code can be used for, how to install it, its limitations, and so on. It is included in the toolbox main folder.
 
 Please note that this is a beta version, and we plan to extend the code significantly. Our objective is to create a toolbox with several functions to analyze the global behavior of dynamical systems.
 
