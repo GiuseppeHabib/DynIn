@@ -13,6 +13,6 @@ Please read the tutorial file for an extended explanation of what the code can b
 
 Please note that this is a beta version, and we plan to extend the code significantly. Our objective is to create a toolbox with several functions to analyze the global behavior of dynamical systems.
 
-Extensive discussion and contextualization of the algorithm concerning the current scientific literature are available in this paper  
-[ND - Dynamical integrity assessment of stable equilibria a new rapid iterative procedure (2021).pdf](https://github.com/GiuseppeHabib/DynIn/files/10426939/ND.-.Dynamical.integrity.assessment.of.stable.equilibria.a.new.rapid.iterative.procedure.2021.pdf)  
+Extensive discussion and contextualization of the algorithm concerning the current scientific literature are available in these papers
+[Habib - Dynamical integrity assessment of stable equilibria a new rapid iterative procedure (2021).pdf](https://github.com/GiuseppeHabib/DynIn/files/10426939/ND.-.Dynamical.integrity.assessment.of.stable.equilibria.a.new.rapid.iterative.procedure.2021.pdf) and [Szaksz, Stepan, Habib - Dynamical integrity estimation in time delayed systems: A rapid iterative algorithm (2024).pdf](https://doi.org/10.1016/j.jsv.2023.118045)  
 Please cite this paper if you use this code for your scientific research.
